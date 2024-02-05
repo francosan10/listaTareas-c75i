@@ -6,9 +6,16 @@ const FormularioTareas = () => {
 const [tarea, setTarea] = useState('');
 const [tareas, setTareas] = useState([]);
 
+const handleSubmit = (e)=>{
+  e.preventDefault();
+  // guardar la tarea en el array tareas
+  setTareas([...tareas, tarea])
+}
+
+
   return (
     <section>
-      <Form >
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3 d-flex" >
           <Form.Control
             type="text"
