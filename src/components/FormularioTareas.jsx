@@ -4,9 +4,13 @@ import { useState, useEffect } from "react";
 
 const FormularioTareas = () => {
 const [tarea, setTarea] = useState('');
-const [tareas, setTareas] = useState([]);
+const tareasLocalStorage = JSON.parse(localStorage.getItem('listaTareas')) || [];
+const [tareas, setTareas] = useState(tareasLocalStorage);
 
-useEffect
+useEffect(()=>{
+  //aqui guarda el codigo
+  localStorage.setItem('listaTareas', JSON.stringify(tareas));
+},[tareas])
 
 const handleSubmit = (e)=>{
   e.preventDefault();
