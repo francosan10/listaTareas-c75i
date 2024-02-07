@@ -1,10 +1,12 @@
 import { Button, Form } from "react-bootstrap";
 import ListaTareas from "./ListaTareas";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const FormularioTareas = () => {
 const [tarea, setTarea] = useState('');
 const [tareas, setTareas] = useState([]);
+
+useEffect
 
 const handleSubmit = (e)=>{
   e.preventDefault();
